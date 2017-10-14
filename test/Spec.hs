@@ -1,11 +1,16 @@
-import Lib
+import Company.Total
+import Company.Data
 import Test.HUnit
 import System.Exit
 
-factTest = 5 ~=? factorial 5
+
+sampleCompany :: Company
+sampleCompany = ("DB", [("Kuldeep","Amanora",125.0),("Aman","Amanora",123.0)])
+
+totalTest = 248.0 ~=? total(sampleCompany)
 tests = 
     TestList[
-        TestLabel "factorial" factTest
+        TestLabel "Total" totalTest
     ]
 main = do
     counts <- runTestTT tests
