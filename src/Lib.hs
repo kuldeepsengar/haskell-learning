@@ -1,7 +1,8 @@
 module Lib
     (   factorial,
         calcBmis,
-        maximum'
+        maximum',
+        reverse'
     ) where
 
 factorial  :: (Integral a) => a -> a
@@ -19,3 +20,10 @@ maximum' (x:xs)
     | x > maxTail = x
     | otherwise = maxTail
     where maxTail = maximum' xs
+
+{-- Recursion --}
+reverse' :: String -> String
+reverse' [] = []
+reverse' [x] = [x]
+reverse' (e: xs) = reverse' xs ++ [e]
+
